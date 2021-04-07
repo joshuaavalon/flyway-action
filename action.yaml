@@ -1,5 +1,8 @@
 name: Flyway Migration
 description: Migrate database in Github Action
+branding:
+  color: red
+  icon: database
 inputs:
   url:
     description: The jdbc url to use to connect to the database
