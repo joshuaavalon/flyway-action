@@ -16,7 +16,7 @@ inputs:
     default: filesystem:./sql
 runs:
   using: docker
-  image: flyway/flyway:7
+  image: docker://flyway/flyway:7
   env:
     FLYWAY_URL: ${{ inputs.url }}
     FLYWAY_USER: ${{ inputs.user }}
