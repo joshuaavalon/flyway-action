@@ -19,7 +19,7 @@ inputs:
     default: filesystem:./sql
 runs:
   using: docker
-  image: docker://flyway/flyway:7
+  image: docker://flyway/flyway:8
   env:
     FLYWAY_URL: ${{ inputs.url }}
     FLYWAY_USER: ${{ inputs.user }}
@@ -27,3 +27,4 @@ runs:
     FLYWAY_LOCATIONS: ${{ inputs.locations }}
   args:
     - migrate
+    
