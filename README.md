@@ -15,7 +15,9 @@ jobs:
       postgres:
         image: postgres
         env:
-          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: db
+          POSTGRES_USER: user
+          POSTGRES_PASSWORD: password
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
@@ -23,11 +25,11 @@ jobs:
           --health-retries 5
     steps:
       - uses: actions/checkout@v2
-      - uses: joshuaavalon/flyway-action@v1
+      - uses: joshuaavalon/flyway-action@v2
         with:
-          url: jdbc:postgresql://postgres:5432/postgres
-          user: postgres
-          password: postgres
+          url: jdbc:postgresql://postgres:5432/db
+          user: user
+          password: password
       - run: echo 'testing'
 ```
 
