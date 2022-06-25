@@ -17,6 +17,9 @@ inputs:
     description: Comma-separated list of locations to scan recursively for migrations
     required: true
     default: filesystem:./sql
+  initSql:
+    description: The SQL statements to run to initialize a new database connection immediately after opening it
+    required: false
 runs:
   using: docker
   image: docker://flyway/flyway:8
@@ -25,6 +28,7 @@ runs:
     FLYWAY_USER: ${{ inputs.user }}
     FLYWAY_PASSWORD: ${{ inputs.password }}
     FLYWAY_LOCATIONS: ${{ inputs.locations }}
+    FLYWAY_INIT_SQL: ${{ inputs.initSql }}
   args:
     - migrate
     
