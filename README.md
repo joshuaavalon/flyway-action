@@ -1,6 +1,6 @@
 # Flyway Action
 
-This action runs [Flyway v8][flyway] to migrate database. It aims to migrate database for testing in workflows.
+This action runs [Flyway v9][flyway] to migrate database. It aims to migrate database for testing in workflows.
 
 ## Usage
 
@@ -25,7 +25,7 @@ jobs:
           --health-retries 5
     steps:
       - uses: actions/checkout@v2
-      - uses: joshuaavalon/flyway-action@v2
+      - uses: joshuaavalon/flyway-action@v3.0.0
         with:
           url: jdbc:postgresql://postgres:5432/db
           user: user
