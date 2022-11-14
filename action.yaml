@@ -37,3 +37,6 @@ runs:
     FLYWAY_INIT_SQL: ${{ inputs.initSql }}
     FLYWAY_DEFAULT_SCHEMA: ${{ inputs.defaultSchema }}
     FLYWAY_TABLE: ${{ inputs.table }}
+  args:
+    - migrate
+
