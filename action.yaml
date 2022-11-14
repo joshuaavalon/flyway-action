@@ -25,6 +25,7 @@ inputs:
     required: false
   table:
     description: Name of schema history table
+    required: false
 runs:
   using: docker
   image: docker://flyway/flyway:9
