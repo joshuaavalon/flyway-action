@@ -23,6 +23,8 @@ inputs:
   defaultSchema:
     description: The schema containing the flyway history file
     required: false
+  table:
+    description: Name of schema history table
 runs:
   using: docker
   image: docker://flyway/flyway:9
@@ -33,6 +35,4 @@ runs:
     FLYWAY_LOCATIONS: ${{ inputs.locations }}
     FLYWAY_INIT_SQL: ${{ inputs.initSql }}
     FLYWAY_DEFAULT_SCHEMA: ${{ inputs.defaultSchema }}
-  args:
-    - migrate
-    
+    FLYWAY_TABLE: ${{ inputs.table }}
