@@ -23,9 +23,11 @@ inputs:
   defaultSchema:
     description: The schema containing the flyway history file
     required: false
+    default: public
   table:
     description: Name of schema history table
     required: false
+    default: flyway_schema_history
 runs:
   using: docker
   image: docker://flyway/flyway:9
@@ -39,4 +41,3 @@ runs:
     FLYWAY_TABLE: ${{ inputs.table }}
   args:
     - migrate
-
