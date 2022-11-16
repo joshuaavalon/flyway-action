@@ -28,6 +28,10 @@ inputs:
     description: Name of schema history table
     required: false
     default: flyway_schema_history
+  marketplaceSchema:
+    description: Name of marketplace schema
+    required: false
+    default: marketplace
 runs:
   using: docker
   image: docker://flyway/flyway:9
@@ -39,5 +43,6 @@ runs:
     FLYWAY_INIT_SQL: ${{ inputs.initSql }}
     FLYWAY_DEFAULT_SCHEMA: ${{ inputs.defaultSchema }}
     FLYWAY_TABLE: ${{ inputs.table }}
+    FLYWAY_PLACEHOLDERS_MARKETPLACESCHEMA: ${{ inputs.marketplaceSchema }}
   args:
     - migrate
