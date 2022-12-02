@@ -20,6 +20,10 @@ inputs:
   initSql:
     description: The SQL statements to run to initialize a new database connection immediately after opening it
     required: false
+  outOfOrder:
+    description: allows for migration to be run out of order
+    required: false
+    default: 'false'
 runs:
   using: docker
   image: docker://flyway/flyway:9
@@ -31,4 +35,4 @@ runs:
     FLYWAY_INIT_SQL: ${{ inputs.initSql }}
   args:
     - migrate
-    
+    - '-outOfOrder=${{ inputs.outOfOrder }}'

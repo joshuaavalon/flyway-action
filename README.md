@@ -7,7 +7,13 @@ This action runs [Flyway v9][flyway] to migrate database. It aims to migrate dat
 ```yaml
 name: Main
 on:
-  - push
+  push:
+  workflow_dispatch:
+    inputs:
+      outOfOrder:
+        description: 'run out of order'
+        required: false
+        default: 'false'
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -25,15 +31,16 @@ jobs:
           --health-retries 5
     steps:
       - uses: actions/checkout@v2
-      - uses: joshuaavalon/flyway-action@v3.0.0
+      - uses: joshuaavalon/flyway-action@v3.1.0
         with:
           url: jdbc:postgresql://postgres:5432/db
           user: user
           password: password
+          outOfOrder: '${{ github.event.inputs.outOfOrder }}'
       - run: echo 'testing'
 ```
 
-Currently, it supports `url`, `user`, `password`, `initSql` and `locations`. `locations` are default to `filesystem:./sql`.
+Currently, it supports `url`, `user`, `password`, `initSql`,  `locations` and `outOfOrder`. `locations` are default to `filesystem:./sql`.
 
 For details, please check out Flyway [documentation].
 
