@@ -36,7 +36,7 @@ jobs:
           url: jdbc:postgresql://postgres:5432/db
           user: user
           password: password
-          outOfOrder: '${{ github.event.inputs.outOfOrder }}'
+          outOfOrder: ${{ github.event.inputs.outOfOrder || 'false' }}
       - run: echo 'testing'
 ```
 
