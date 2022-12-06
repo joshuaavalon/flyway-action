@@ -35,6 +35,18 @@ jobs:
 
 Currently, it supports `url`, `user`, `password`, `initSql` and `locations`. `locations` are default to `filesystem:./sql`.
 
+Extra configurations can be passed via environment variables.
+
+```yaml
+- uses: joshuaavalon/flyway-action@v3.0.0
+  with:
+    url: jdbc:postgresql://postgres:5432/db
+    user: user
+    password: password
+  env:
+    FLYWAY_VALIDATE_MIGRATION_NAMING: true
+```
+
 For details, please check out Flyway [documentation].
 
 [flyway]: https://flywaydb.org/
