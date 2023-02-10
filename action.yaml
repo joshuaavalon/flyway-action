@@ -32,6 +32,10 @@ inputs:
     description: Name of marketplace schema
     required: false
     default: marketplace
+  outOfOrder:
+    description: Allow migrations to run out of order
+    required: false
+    default: false
 runs:
   using: docker
   image: docker://flyway/flyway:9
@@ -44,5 +48,6 @@ runs:
     FLYWAY_DEFAULT_SCHEMA: ${{ inputs.defaultSchema }}
     FLYWAY_TABLE: ${{ inputs.table }}
     FLYWAY_PLACEHOLDERS_MARKETPLACESCHEMA: ${{ inputs.marketplaceSchema }}
+    FLYWAY_OUT_OF_ORDER: ${{ inputs.outOfOrder }}
   args:
     - migrate
