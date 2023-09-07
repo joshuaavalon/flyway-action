@@ -66,6 +66,6 @@ For details, please check out Flyway [documentation].
 ### Database compatibility
 
 > Flyway Community Edition `8.0.0-beta1` dropped support for databases older than 5 years, including MySQL `5.7`.  
-> The minimum supported version of MySQL was increased from `5.7` to `8.0`.
+> The minimum supported version of MySQL was increased from `5.7` to `8.0` in [this commit](https://github.com/flyway/flyway/commit/4622cee057c855a718533d60aecb2c3e21960a5f#diff-bba65157fbd0a2962cf37cd0e4625186c2dc6508d4433bb6f0a03a5b564d4815).
 
 For details, please check out Flyway [release note](https://documentation.red-gate.com/fd/release-notes-for-flyway-engine-179732572.html#8.0.0-beta1).
