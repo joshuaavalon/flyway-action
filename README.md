@@ -51,3 +51,21 @@ For details, please check out Flyway [documentation].
 
 [flyway]: https://flywaydb.org/
 [documentation]: https://flywaydb.org/documentation/configuration/parameters/
+
+## Version matrix
+
+| Action version | Flyway version running      |
+|----------------|-----------------------------|
+| @v3.0.0        | flyway community edition v9 |
+| @v2.1.0        | flyway community edition v8 |
+| @v2            | flyway community edition v7 |
+| @v1            | flyway community edition v7 |
+
+## Note
+
+### Database compatibility
+
+> Flyway Community Edition `8.0.0-beta1` dropped support for databases older than 5 years, including MySQL `5.7`.  
+> The minimum supported version of MySQL was increased from `5.7` to `8.0`.
+
+For details, please check out Flyway [release note](https://documentation.red-gate.com/fd/release-notes-for-flyway-engine-179732572.html#8.0.0-beta1).
