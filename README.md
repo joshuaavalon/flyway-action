@@ -50,4 +50,4 @@ Extra configurations can be passed via environment variables.
 For details, please check out Flyway [documentation].
 
 [flyway]: https://flywaydb.org/
-[documentation]: https://flywaydb.org/documentation/configuration/parameters/
+[documentation]: https://documentation.red-gate.com/fd/parameters-224919673.html
