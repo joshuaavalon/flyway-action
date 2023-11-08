@@ -22,7 +22,7 @@ inputs:
     required: false
 runs:
   using: docker
-  image: docker://flyway/flyway:9
+  image: docker://flyway/flyway:10
   env:
     FLYWAY_URL: ${{ inputs.url }}
     FLYWAY_USER: ${{ inputs.user }}
