@@ -20,9 +20,13 @@ inputs:
   initSql:
     description: The SQL statements to run to initialize a new database connection immediately after opening it
     required: false
+  version:
+    description: The flyway version to use
+    default: 10
+    required: false
 runs:
   using: docker
-  image: docker://flyway/flyway:9
+  image: docker://flyway/flyway:${{ inputs.version }}
   env:
     FLYWAY_URL: ${{ inputs.url }}
     FLYWAY_USER: ${{ inputs.user }}
