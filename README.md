@@ -1,4 +1,16 @@
-# Flyway Action
+# Flyway Action [Deprecated]
+
+You can run the Docker image directly without using this action.
+
+```yaml
+- uses: docker://flyway/flyway:9
+  env:
+    FLYWAY_URL: jdbc:postgresql://postgres:5432/db
+    FLYWAY_USER: user
+    FLYWAY_PASSWORD: password
+    FLYWAY_LOCATIONS: filesystem:./sql
+    FLYWAY_VALIDATE_MIGRATION_NAMING: true
+```
 
 This action runs [Flyway v9][flyway] to migrate database. It aims to migrate database for testing in workflows.
 
